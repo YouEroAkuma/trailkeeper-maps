@@ -1,0 +1,695 @@
+[
+ {
+  "code": "0520_1",
+  "date": "20210700",
+  "url": "https://data.bev.gv.at/download/KM_R/KM50/20210701/KM50_UTM32N_200L_Farbtiff_mit_Relief/km50_mit_Relief_0520_1_202107.tif",
+  "bbox": [
+   9.65164,
+   46.49615,
+   10.31403,
+   46.95164
+  ]
+ },
+ {
+  "code": "0530_0",
+  "date": "20210700",
+  "url": "https://data.bev.gv.at/download/KM_R/KM50/20210701/KM50_UTM32N_200L_Farbtiff_mit_Relief/km50_mit_Relief_0530_0_202107.tif",
+  "bbox": [
+   9.0,
+   47.40154,
+   9.66837,
+   47.85334
+  ]
+ },
+ {
+  "code": "0530_1",
+  "date": "20210700",
+  "url": "https://data.bev.gv.at/download/KM_R/KM50/20210701/KM50_UTM32N_200L_Farbtiff_mit_Relief/km50_mit_Relief_0530_1_202107.tif",
+  "bbox": [
+   9.66266,
+   47.39579,
+   10.33659,
+   47.8514
+  ]
+ },
+ {
+  "code": "0530_2",
+  "date": "20210700",
+  "url": "https://data.bev.gv.at/download/KM_R/KM50/20210701/KM50_UTM32N_200L_Farbtiff_mit_Relief/km50_mit_Relief_0530_2_202107.tif",
+  "bbox": [
+   9.0,
+   46.95164,
+   9.66266,
+   47.40345
+  ]
+ },
+ {
+  "code": "0530_3",
+  "date": "20210700",
+  "url": "https://data.bev.gv.at/download/KM_R/KM50/20210701/KM50_UTM32N_200L_Farbtiff_mit_Relief/km50_mit_Relief_0530_3_202107.tif",
+  "bbox": [
+   9.65708,
+   46.94599,
+   10.32517,
+   47.40154
+  ]
+ },
+ {
+  "code": "0620_0",
+  "date": "20250408",
+  "url": "https://data.bev.gv.at/download/KM_R/KM50/20250408/KM50_UTM32N_200L_Farbtiff_mit_Relief/km50_mit_Relief_0620_0_20250408.tif",
+  "bbox": [
+   10.30315,
+   46.48687,
+   10.97071,
+   46.94599
+  ]
+ },
+ {
+  "code": "0620_1",
+  "date": "20210700",
+  "url": "https://data.bev.gv.at/download/KM_R/KM50/20210701/KM50_UTM32N_200L_Farbtiff_mit_Relief/km50_mit_Relief_0620_1_202107.tif",
+  "bbox": [
+   10.95441,
+   46.47389,
+   11.627,
+   46.93657
+  ]
+ },
+ {
+  "code": "0630_0",
+  "date": "20210700",
+  "url": "https://data.bev.gv.at/download/KM_R/KM50/20210701/KM50_UTM32N_200L_Farbtiff_mit_Relief/km50_mit_Relief_0630_0_202107.tif",
+  "bbox": [
+   10.32517,
+   47.38622,
+   11.00453,
+   47.84556
+  ]
+ },
+ {
+  "code": "0630_1",
+  "date": "20210700",
+  "url": "https://data.bev.gv.at/download/KM_R/KM50/20210701/KM50_UTM32N_200L_Farbtiff_mit_Relief/km50_mit_Relief_0630_1_202107.tif",
+  "bbox": [
+   10.98742,
+   47.37283,
+   11.67205,
+   47.83584
+  ]
+ },
+ {
+  "code": "0630_2",
+  "date": "20210700",
+  "url": "https://data.bev.gv.at/download/KM_R/KM50/20210701/KM50_UTM32N_200L_Farbtiff_mit_Relief/km50_mit_Relief_0630_2_202107.tif",
+  "bbox": [
+   10.31403,
+   46.93657,
+   10.98742,
+   47.39579
+  ]
+ },
+ {
+  "code": "0630_3",
+  "date": "20210700",
+  "url": "https://data.bev.gv.at/download/KM_R/KM50/20210701/KM50_UTM32N_200L_Farbtiff_mit_Relief/km50_mit_Relief_0630_3_202107.tif",
+  "bbox": [
+   10.97071,
+   46.92338,
+   11.64926,
+   47.38622
+  ]
+ },
+ {
+  "code": "0720_0",
+  "date": "20210700",
+  "url": "https://data.bev.gv.at/download/KM_R/KM50/20210701/KM50_UTM32N_200L_Farbtiff_mit_Relief/km50_mit_Relief_0720_0_202107.tif",
+  "bbox": [
+   11.60528,
+   46.45721,
+   12.28276,
+   46.92338
+  ]
+ },
+ {
+  "code": "0730_0",
+  "date": "20210700",
+  "url": "https://data.bev.gv.at/download/KM_R/KM50/20210701/KM50_UTM32N_200L_Farbtiff_mit_Relief/km50_mit_Relief_0730_0_202107.tif",
+  "bbox": [
+   11.64926,
+   47.35562,
+   12.33901,
+   47.82224
+  ]
+ },
+ {
+  "code": "0730_2",
+  "date": "20210700",
+  "url": "https://data.bev.gv.at/download/KM_R/KM50/20210701/KM50_UTM32N_200L_Farbtiff_mit_Relief/km50_mit_Relief_0730_2_202107.tif",
+  "bbox": [
+   11.627,
+   46.90644,
+   12.31055,
+   47.37283
+  ]
+ },
+ {
+  "code": "1220_1",
+  "date": "20210700",
+  "url": "https://data.bev.gv.at/download/KM_R/KM50/20210701/KM50_UTM33N_200L_Farbtiff_mit_Relief/km50_mit_Relief_1220_1_202107.tif",
+  "bbox": [
+   11.71724,
+   46.45721,
+   12.39472,
+   46.92338
+  ]
+ },
+ {
+  "code": "1230_1",
+  "date": "20210700",
+  "url": "https://data.bev.gv.at/download/KM_R/KM50/20210701/KM50_UTM33N_200L_Farbtiff_mit_Relief/km50_mit_Relief_1230_1_202107.tif",
+  "bbox": [
+   11.66099,
+   47.35562,
+   12.35074,
+   47.82224
+  ]
+ },
+ {
+  "code": "1230_3",
+  "date": "20210700",
+  "url": "https://data.bev.gv.at/download/KM_R/KM50/20210701/KM50_UTM33N_200L_Farbtiff_mit_Relief/km50_mit_Relief_1230_3_202107.tif",
+  "bbox": [
+   11.68945,
+   46.90644,
+   12.373,
+   47.37283
+  ]
+ },
+ {
+  "code": "1320_0",
+  "date": "20230901",
+  "url": "https://data.bev.gv.at/download/KM_R/KM50/20230901/KM50_UTM33N_200L_Farbtiff_mit_Relief/km50_mit_Relief_1320_0_20230901.tif",
+  "bbox": [
+   12.373,
+   46.47389,
+   13.04559,
+   46.93657
+  ]
+ },
+ {
+  "code": "1320_1",
+  "date": "20210700",
+  "url": "https://data.bev.gv.at/download/KM_R/KM50/20210701/KM50_UTM33N_200L_Farbtiff_mit_Relief/km50_mit_Relief_1320_1_202107.tif",
+  "bbox": [
+   13.02929,
+   46.48687,
+   13.69685,
+   46.94599
+  ]
+ },
+ {
+  "code": "1320_2",
+  "date": "20210700",
+  "url": "https://data.bev.gv.at/download/KM_R/KM50/20210701/KM50_UTM33N_200L_Farbtiff_mit_Relief/km50_mit_Relief_1320_2_202107.tif",
+  "bbox": [
+   12.39472,
+   46.02435,
+   13.06151,
+   46.48687
+  ]
+ },
+ {
+  "code": "1320_3",
+  "date": "20210700",
+  "url": "https://data.bev.gv.at/download/KM_R/KM50/20210701/KM50_UTM33N_200L_Farbtiff_mit_Relief/km50_mit_Relief_1320_3_202107.tif",
+  "bbox": [
+   13.04559,
+   46.03713,
+   13.70747,
+   46.49615
+  ]
+ },
+ {
+  "code": "1330_0",
+  "date": "20210700",
+  "url": "https://data.bev.gv.at/download/KM_R/KM50/20210701/KM50_UTM33N_200L_Farbtiff_mit_Relief/km50_mit_Relief_1330_0_202107.tif",
+  "bbox": [
+   12.32795,
+   47.37283,
+   13.01258,
+   47.83584
+  ]
+ },
+ {
+  "code": "1330_1",
+  "date": "20210700",
+  "url": "https://data.bev.gv.at/download/KM_R/KM50/20210701/KM50_UTM33N_200L_Farbtiff_mit_Relief/km50_mit_Relief_1330_1_202107.tif",
+  "bbox": [
+   12.99547,
+   47.38622,
+   13.67483,
+   47.84556
+  ]
+ },
+ {
+  "code": "1330_2",
+  "date": "20250505",
+  "url": "https://data.bev.gv.at/download/KM_R/KM50/20250505/KM50_UTM33N_200L_Farbtiff_mit_Relief/km50_mit_Relief_1330_2_20250505.tif",
+  "bbox": [
+   12.35074,
+   46.92338,
+   13.02929,
+   47.38622
+  ]
+ },
+ {
+  "code": "1330_3",
+  "date": "20210700",
+  "url": "https://data.bev.gv.at/download/KM_R/KM50/20210701/KM50_UTM33N_200L_Farbtiff_mit_Relief/km50_mit_Relief_1330_3_202107.tif",
+  "bbox": [
+   13.01258,
+   46.93657,
+   13.68597,
+   47.39579
+  ]
+ },
+ {
+  "code": "1340_0",
+  "date": "20210700",
+  "url": "https://data.bev.gv.at/download/KM_R/KM50/20210701/KM50_UTM33N_200L_Farbtiff_mit_Relief/km50_mit_Relief_1340_0_202107.tif",
+  "bbox": [
+   12.28064,
+   48.2716,
+   12.97793,
+   48.73495
+  ]
+ },
+ {
+  "code": "1340_1",
+  "date": "20210700",
+  "url": "https://data.bev.gv.at/download/KM_R/KM50/20210701/KM50_UTM33N_200L_Farbtiff_mit_Relief/km50_mit_Relief_1340_1_202107.tif",
+  "bbox": [
+   12.95996,
+   48.28542,
+   13.65171,
+   48.74498
+  ]
+ },
+ {
+  "code": "1340_2",
+  "date": "20210700",
+  "url": "https://data.bev.gv.at/download/KM_R/KM50/20210701/KM50_UTM33N_200L_Farbtiff_mit_Relief/km50_mit_Relief_1340_2_202107.tif",
+  "bbox": [
+   12.30458,
+   47.82224,
+   12.99547,
+   48.28542
+  ]
+ },
+ {
+  "code": "1340_3",
+  "date": "20210700",
+  "url": "https://data.bev.gv.at/download/KM_R/KM50/20210701/KM50_UTM33N_200L_Farbtiff_mit_Relief/km50_mit_Relief_1340_3_202107.tif",
+  "bbox": [
+   12.97793,
+   47.83584,
+   13.66341,
+   48.29529
+  ]
+ },
+ {
+  "code": "1420_0",
+  "date": "20230701",
+  "url": "https://data.bev.gv.at/download/KM_R/KM50/20230701/KM50_UTM33N_200L_Farbtiff_mit_Relief/km50_mit_Relief_1420_0_20230701.tif",
+  "bbox": [
+   13.68597,
+   46.49615,
+   14.34836,
+   46.95164
+  ]
+ },
+ {
+  "code": "1420_1",
+  "date": "20210700",
+  "url": "https://data.bev.gv.at/download/KM_R/KM50/20210701/KM50_UTM33N_200L_Farbtiff_mit_Relief/km50_mit_Relief_1420_1_202107.tif",
+  "bbox": [
+   14.34292,
+   46.50171,
+   15.0,
+   46.95353
+  ]
+ },
+ {
+  "code": "1420_2",
+  "date": "20210700",
+  "url": "https://data.bev.gv.at/download/KM_R/KM50/20210701/KM50_UTM33N_200L_Farbtiff_mit_Relief/km50_mit_Relief_1420_2_202107.tif",
+  "bbox": [
+   13.69685,
+   46.04627,
+   14.35367,
+   46.50171
+  ]
+ },
+ {
+  "code": "1420_3",
+  "date": "20260826",
+  "url": "https://data.bev.gv.at/download/KM_R/KM50/20260826/KM50_UTM33N_200L_Farbtiff_mit_Relief/km50_mit_Relief_1420_3_20260826.tif",
+  "bbox": [
+   14.34836,
+   46.05175,
+   15.0,
+   46.50357
+  ]
+ },
+ {
+  "code": "1430_0",
+  "date": "20210700",
+  "url": "https://data.bev.gv.at/download/KM_R/KM50/20210701/KM50_UTM33N_200L_Farbtiff_mit_Relief/km50_mit_Relief_1430_0_202107.tif",
+  "bbox": [
+   13.66341,
+   47.39579,
+   14.33734,
+   47.8514
+  ]
+ },
+ {
+  "code": "1430_1",
+  "date": "20221101",
+  "url": "https://data.bev.gv.at/download/KM_R/KM50/20221101/KM50_UTM33N_200L_Farbtiff_mit_Relief/km50_mit_Relief_1430_1_20221101.tif",
+  "bbox": [
+   14.33163,
+   47.40154,
+   15.0,
+   47.85334
+  ]
+ },
+ {
+  "code": "1430_2",
+  "date": "20230701",
+  "url": "https://data.bev.gv.at/download/KM_R/KM50/20230701/KM50_UTM33N_200L_Farbtiff_mit_Relief/km50_mit_Relief_1430_2_20230701.tif",
+  "bbox": [
+   13.67483,
+   46.94599,
+   14.34292,
+   47.40154
+  ]
+ },
+ {
+  "code": "1430_3",
+  "date": "20210700",
+  "url": "https://data.bev.gv.at/download/KM_R/KM50/20210701/KM50_UTM33N_200L_Farbtiff_mit_Relief/km50_mit_Relief_1430_3_202107.tif",
+  "bbox": [
+   14.33734,
+   46.95164,
+   15.0,
+   47.40345
+  ]
+ },
+ {
+  "code": "1440_0",
+  "date": "20210700",
+  "url": "https://data.bev.gv.at/download/KM_R/KM50/20210701/KM50_UTM33N_200L_Farbtiff_mit_Relief/km50_mit_Relief_1440_0_202107.tif",
+  "bbox": [
+   13.63972,
+   48.29529,
+   14.32578,
+   48.75101
+  ]
+ },
+ {
+  "code": "1440_1",
+  "date": "20210700",
+  "url": "https://data.bev.gv.at/download/KM_R/KM50/20210701/KM50_UTM33N_200L_Farbtiff_mit_Relief/km50_mit_Relief_1440_1_202107.tif",
+  "bbox": [
+   14.31979,
+   48.30122,
+   15.0,
+   48.75301
+  ]
+ },
+ {
+  "code": "1440_2",
+  "date": "20250710",
+  "url": "https://data.bev.gv.at/download/KM_R/KM50/20250710/KM50_UTM33N_200L_Farbtiff_mit_Relief/km50_mit_Relief_1440_2_20250710.tif",
+  "bbox": [
+   13.65171,
+   47.84556,
+   14.33163,
+   48.30122
+  ]
+ },
+ {
+  "code": "1440_3",
+  "date": "20250408",
+  "url": "https://data.bev.gv.at/download/KM_R/KM50/20250408/KM50_UTM33N_200L_Farbtiff_mit_Relief/km50_mit_Relief_1440_3_20250408.tif",
+  "bbox": [
+   14.32578,
+   47.8514,
+   15.0,
+   48.3032
+  ]
+ },
+ {
+  "code": "1450_2",
+  "date": "20210700",
+  "url": "https://data.bev.gv.at/download/KM_R/KM50/20210701/KM50_UTM33N_200L_Farbtiff_mit_Relief/km50_mit_Relief_1450_2_202107.tif",
+  "bbox": [
+   13.62743,
+   48.74498,
+   14.31979,
+   49.20076
+  ]
+ },
+ {
+  "code": "1450_3",
+  "date": "20210700",
+  "url": "https://data.bev.gv.at/download/KM_R/KM50/20210701/KM50_UTM33N_200L_Farbtiff_mit_Relief/km50_mit_Relief_1450_3_202107.tif",
+  "bbox": [
+   14.31364,
+   48.75101,
+   15.0,
+   49.2028
+  ]
+ },
+ {
+  "code": "1520_0",
+  "date": "20210700",
+  "url": "https://data.bev.gv.at/download/KM_R/KM50/20210701/KM50_UTM33N_200L_Farbtiff_mit_Relief/km50_mit_Relief_1520_0_202107.tif",
+  "bbox": [
+   15.0,
+   46.50171,
+   15.65708,
+   46.95353
+  ]
+ },
+ {
+  "code": "1520_1",
+  "date": "20210700",
+  "url": "https://data.bev.gv.at/download/KM_R/KM50/20210701/KM50_UTM33N_200L_Farbtiff_mit_Relief/km50_mit_Relief_1520_1_202107.tif",
+  "bbox": [
+   15.65164,
+   46.49615,
+   16.31403,
+   46.95164
+  ]
+ },
+ {
+  "code": "1530_0",
+  "date": "20210700",
+  "url": "https://data.bev.gv.at/download/KM_R/KM50/20210701/KM50_UTM33N_200L_Farbtiff_mit_Relief/km50_mit_Relief_1530_0_202107.tif",
+  "bbox": [
+   15.0,
+   47.40154,
+   15.66837,
+   47.85334
+  ]
+ },
+ {
+  "code": "1530_1",
+  "date": "20210700",
+  "url": "https://data.bev.gv.at/download/KM_R/KM50/20210701/KM50_UTM33N_200L_Farbtiff_mit_Relief/km50_mit_Relief_1530_1_202107.tif",
+  "bbox": [
+   15.66266,
+   47.39579,
+   16.33659,
+   47.8514
+  ]
+ },
+ {
+  "code": "1530_2",
+  "date": "20210700",
+  "url": "https://data.bev.gv.at/download/KM_R/KM50/20210701/KM50_UTM33N_200L_Farbtiff_mit_Relief/km50_mit_Relief_1530_2_202107.tif",
+  "bbox": [
+   15.0,
+   46.95164,
+   15.66266,
+   47.40345
+  ]
+ },
+ {
+  "code": "1530_3",
+  "date": "20210700",
+  "url": "https://data.bev.gv.at/download/KM_R/KM50/20210701/KM50_UTM33N_200L_Farbtiff_mit_Relief/km50_mit_Relief_1530_3_202107.tif",
+  "bbox": [
+   15.65708,
+   46.94599,
+   16.32517,
+   47.40154
+  ]
+ },
+ {
+  "code": "1540_0",
+  "date": "20210700",
+  "url": "https://data.bev.gv.at/download/KM_R/KM50/20210701/KM50_UTM33N_200L_Farbtiff_mit_Relief/km50_mit_Relief_1540_0_202107.tif",
+  "bbox": [
+   15.0,
+   48.30122,
+   15.68021,
+   48.75301
+  ]
+ },
+ {
+  "code": "1540_1",
+  "date": "20210700",
+  "url": "https://data.bev.gv.at/download/KM_R/KM50/20210701/KM50_UTM33N_200L_Farbtiff_mit_Relief/km50_mit_Relief_1540_1_202107.tif",
+  "bbox": [
+   15.67422,
+   48.29529,
+   16.36028,
+   48.75101
+  ]
+ },
+ {
+  "code": "1540_2",
+  "date": "20210700",
+  "url": "https://data.bev.gv.at/download/KM_R/KM50/20210701/KM50_UTM33N_200L_Farbtiff_mit_Relief/km50_mit_Relief_1540_2_202107.tif",
+  "bbox": [
+   15.0,
+   47.8514,
+   15.67422,
+   48.3032
+  ]
+ },
+ {
+  "code": "1540_3",
+  "date": "20210700",
+  "url": "https://data.bev.gv.at/download/KM_R/KM50/20210701/KM50_UTM33N_200L_Farbtiff_mit_Relief/km50_mit_Relief_1540_3_202107.tif",
+  "bbox": [
+   15.66837,
+   47.84556,
+   16.34829,
+   48.30122
+  ]
+ },
+ {
+  "code": "1550_2",
+  "date": "20210700",
+  "url": "https://data.bev.gv.at/download/KM_R/KM50/20210701/KM50_UTM33N_200L_Farbtiff_mit_Relief/km50_mit_Relief_1550_2_202107.tif",
+  "bbox": [
+   15.0,
+   48.75101,
+   15.68636,
+   49.2028
+  ]
+ },
+ {
+  "code": "1550_3",
+  "date": "20210700",
+  "url": "https://data.bev.gv.at/download/KM_R/KM50/20210701/KM50_UTM33N_200L_Farbtiff_mit_Relief/km50_mit_Relief_1550_3_202107.tif",
+  "bbox": [
+   15.68021,
+   48.74498,
+   16.37257,
+   49.20076
+  ]
+ },
+ {
+  "code": "1620_0",
+  "date": "20210700",
+  "url": "https://data.bev.gv.at/download/KM_R/KM50/20210701/KM50_UTM33N_200L_Farbtiff_mit_Relief/km50_mit_Relief_1620_0_202107.tif",
+  "bbox": [
+   16.30315,
+   46.48687,
+   16.97071,
+   46.94599
+  ]
+ },
+ {
+  "code": "1630_0",
+  "date": "20210700",
+  "url": "https://data.bev.gv.at/download/KM_R/KM50/20210701/KM50_UTM33N_200L_Farbtiff_mit_Relief/km50_mit_Relief_1630_0_202107.tif",
+  "bbox": [
+   16.32517,
+   47.38622,
+   17.00453,
+   47.84556
+  ]
+ },
+ {
+  "code": "1630_1",
+  "date": "20210700",
+  "url": "https://data.bev.gv.at/download/KM_R/KM50/20210701/KM50_UTM33N_200L_Farbtiff_mit_Relief/km50_mit_Relief_1630_1_202107.tif",
+  "bbox": [
+   16.98742,
+   47.37283,
+   17.67205,
+   47.83584
+  ]
+ },
+ {
+  "code": "1630_2",
+  "date": "20210700",
+  "url": "https://data.bev.gv.at/download/KM_R/KM50/20210701/KM50_UTM33N_200L_Farbtiff_mit_Relief/km50_mit_Relief_1630_2_202107.tif",
+  "bbox": [
+   16.31403,
+   46.93657,
+   16.98742,
+   47.39579
+  ]
+ },
+ {
+  "code": "1640_0",
+  "date": "20220300",
+  "url": "https://data.bev.gv.at/download/KM_R/KM50/20220301/KM50_UTM33N_200L_Farbtiff_mit_Relief/km50_mit_Relief_1640_0_202203.tif",
+  "bbox": [
+   16.34829,
+   48.28542,
+   17.04004,
+   48.74498
+  ]
+ },
+ {
+  "code": "1640_2",
+  "date": "20210700",
+  "url": "https://data.bev.gv.at/download/KM_R/KM50/20210701/KM50_UTM33N_200L_Farbtiff_mit_Relief/km50_mit_Relief_1640_2_202107.tif",
+  "bbox": [
+   16.33659,
+   47.83584,
+   17.02207,
+   48.29529
+  ]
+ },
+ {
+  "code": "1640_3",
+  "date": "20210700",
+  "url": "https://data.bev.gv.at/download/KM_R/KM50/20210701/KM50_UTM33N_200L_Farbtiff_mit_Relief/km50_mit_Relief_1640_3_202107.tif",
+  "bbox": [
+   17.00453,
+   47.82224,
+   17.69542,
+   48.28542
+  ]
+ },
+ {
+  "code": "1650_2",
+  "date": "20210700",
+  "url": "https://data.bev.gv.at/download/KM_R/KM50/20210701/KM50_UTM33N_200L_Farbtiff_mit_Relief/km50_mit_Relief_1650_2_202107.tif",
+  "bbox": [
+   16.36028,
+   48.73495,
+   17.05847,
+   49.19464
+  ]
+ }
+]
