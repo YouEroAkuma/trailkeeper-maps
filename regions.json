@@ -1,0 +1,39 @@
+{
+  "minzoom": 8,
+  "maxzoom": 15,
+  "bufferKm": 3,
+  "sources": {
+    "nl-top25": {
+      "label": "TOP25raster 1:25.000",
+      "attribution": "© Kadaster / PDOK (TOP25raster, CC BY 4.0)"
+    },
+    "at-km50": {
+      "label": "BEV KM50-R 1:50.000",
+      "attribution": "© BEV (KM50-R, CC BY 4.0)"
+    }
+  },
+  "regions": [
+    { "id": "nl-groningen", "name": "Groningen", "country": "NL", "iso": "NL-GR", "names": ["Groningen"], "source": "nl-top25" },
+    { "id": "nl-friesland", "name": "Friesland", "country": "NL", "iso": "NL-FR", "names": ["Friesland", "Fryslân"], "source": "nl-top25" },
+    { "id": "nl-drenthe", "name": "Drenthe", "country": "NL", "iso": "NL-DR", "names": ["Drenthe"], "source": "nl-top25" },
+    { "id": "nl-overijssel", "name": "Overijssel", "country": "NL", "iso": "NL-OV", "names": ["Overijssel"], "source": "nl-top25" },
+    { "id": "nl-flevoland", "name": "Flevoland", "country": "NL", "iso": "NL-FL", "names": ["Flevoland"], "source": "nl-top25" },
+    { "id": "nl-gelderland", "name": "Gelderland", "country": "NL", "iso": "NL-GE", "names": ["Gelderland"], "source": "nl-top25" },
+    { "id": "nl-utrecht", "name": "Utrecht", "country": "NL", "iso": "NL-UT", "names": ["Utrecht"], "source": "nl-top25" },
+    { "id": "nl-noord-holland", "name": "Noord-Holland", "country": "NL", "iso": "NL-NH", "names": ["Noord-Holland"], "source": "nl-top25" },
+    { "id": "nl-zuid-holland", "name": "Zuid-Holland", "country": "NL", "iso": "NL-ZH", "names": ["Zuid-Holland"], "source": "nl-top25" },
+    { "id": "nl-zeeland", "name": "Zeeland", "country": "NL", "iso": "NL-ZE", "names": ["Zeeland"], "source": "nl-top25" },
+    { "id": "nl-noord-brabant", "name": "Noord-Brabant", "country": "NL", "iso": "NL-NB", "names": ["Noord-Brabant"], "source": "nl-top25" },
+    { "id": "nl-limburg", "name": "Limburg", "country": "NL", "iso": "NL-LI", "names": ["Limburg"], "source": "nl-top25" },
+
+    { "id": "at-vorarlberg", "name": "Vorarlberg", "country": "AT", "iso": "AT-8", "names": ["Vorarlberg"], "source": "at-km50" },
+    { "id": "at-tirol", "name": "Tirol", "country": "AT", "iso": "AT-7", "names": ["Tirol", "Tyrol"], "source": "at-km50" },
+    { "id": "at-salzburg", "name": "Salzburg", "country": "AT", "iso": "AT-5", "names": ["Salzburg"], "source": "at-km50" },
+    { "id": "at-kaernten", "name": "Kärnten", "country": "AT", "iso": "AT-2", "names": ["Kärnten", "Carinthia"], "source": "at-km50" },
+    { "id": "at-steiermark", "name": "Steiermark", "country": "AT", "iso": "AT-6", "names": ["Steiermark", "Styria"], "source": "at-km50" },
+    { "id": "at-oberoesterreich", "name": "Oberösterreich", "country": "AT", "iso": "AT-4", "names": ["Oberösterreich", "Upper Austria"], "source": "at-km50" },
+    { "id": "at-niederoesterreich", "name": "Niederösterreich", "country": "AT", "iso": "AT-3", "names": ["Niederösterreich", "Lower Austria"], "source": "at-km50" },
+    { "id": "at-wien", "name": "Wien", "country": "AT", "iso": "AT-9", "names": ["Wien", "Vienna"], "source": "at-km50" },
+    { "id": "at-burgenland", "name": "Burgenland", "country": "AT", "iso": "AT-1", "names": ["Burgenland"], "source": "at-km50" }
+  ]
+}

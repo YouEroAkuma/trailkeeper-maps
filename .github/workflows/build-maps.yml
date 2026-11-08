@@ -1,0 +1,117 @@
+name: Build maps
+
+# Manual: converts the chosen regions and publishes them, with catalog.json,
+# to the "maps" release. Regions: "all", "nl", "at" or ids like
+# "nl-gelderland,at-tirol" (see regions.json).
+on:
+  workflow_dispatch:
+    inputs:
+      regions:
+        description: 'all, nl, at, or a comma-separated list of region ids'
+        required: true
+        default: 'all'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: build-maps
+  cancel-in-progress: false
+
+env:
+  RELEASE: maps
+
+jobs:
+  plan:
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: write
+    outputs:
+      regions: ${{ steps.pick.outputs.regions }}
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          persist-credentials: false
+      - id: pick
+        env:
+          WANT: ${{ inputs.regions }}
+        run: |
+          python3 - <<'PY' >> "$GITHUB_OUTPUT"
+          import json, os
+          want = os.environ["WANT"].strip().lower()
+          ids = [r["id"] for r in json.load(open("regions.json"))["regions"]]
+          if want in ("all", ""):
+              pick = ids
+          elif want in ("nl", "at"):
+              pick = [i for i in ids if i.startswith(want + "-")]
+          else:
+              pick = [i for i in (w.strip() for w in want.split(",")) if i in ids]
+          if not pick:
+              raise SystemExit(f"No known regions in: {want}")
+          print("regions=" + json.dumps(pick))
+          PY
+      - name: Make sure the release exists
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release view "$RELEASE" -R "${{ github.repository }}" > /dev/null 2>&1 || \
+            gh release create "$RELEASE" -R "${{ github.repository }}" --title "Offline maps" \
+              --notes "Offline map files for TrailKeeper. See README for sources and licences (CC BY 4.0)."
+
+  build:
+    needs: plan
+    runs-on: ubuntu-24.04
+    timeout-minutes: 340
+    permissions:
+      contents: write
+    strategy:
+      fail-fast: false
+      max-parallel: 3
+      matrix:
+        region: ${{ fromJSON(needs.plan.outputs.regions) }}
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          persist-credentials: false
+      - name: Free disk space
+        run: |
+          sudo rm -rf /usr/share/dotnet /usr/local/lib/android /opt/ghc /opt/hostedtoolcache/CodeQL /usr/local/share/boost || true
+          df -h /
+      - name: Install GDAL and pmtiles
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq gdal-bin python3-shapely > /dev/null
+          gdalinfo --version
+          gh release download -R protomaps/go-pmtiles --pattern '*Linux_x86_64.tar.gz' -O pmtiles.tgz
+          tar xzf pmtiles.tgz pmtiles && sudo mv pmtiles /usr/local/bin/ && rm pmtiles.tgz
+      - name: Build ${{ matrix.region }}
+        run: python3 -I scripts/build_region.py "${{ matrix.region }}" "$RUNNER_TEMP/work" "$RUNNER_TEMP/out"
+      - name: Upload to the release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release upload "$RELEASE" -R "${{ github.repository }}" --clobber \
+            "$RUNNER_TEMP/out/${{ matrix.region }}.pmtiles" "$RUNNER_TEMP/out/${{ matrix.region }}.json"
+
+  catalog:
+    needs: build
+    if: always()
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          persist-credentials: false
+      - name: Write catalog.json
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir entries
+          gh release download "$RELEASE" -R "${{ github.repository }}" --pattern '*.json' --dir entries --clobber
+          rm -f entries/catalog.json
+          python3 -I scripts/make_catalog.py entries \
+            "https://github.com/${{ github.repository }}/releases/download/$RELEASE" catalog.json
+          cat catalog.json
+          gh release upload "$RELEASE" -R "${{ github.repository }}" --clobber catalog.json
