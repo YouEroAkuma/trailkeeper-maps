@@ -80,10 +80,10 @@ save("all-tifs.txt", "\n".join(sorted(tifs)))
 # keep the coloured map with relief shading, newest date per tile
 tiles: dict[str, tuple[str, str]] = {}
 for u in tifs:
-    m = re.search(r"km50_mit_Relief_(\d+_\d+)_(\d{8})\.tif$", u, re.I)
+    m = re.search(r"km50_mit_Relief_(\d+_\d+)_(\d{6,8})\.tif$", u, re.I)
     if not m:
         continue
-    code, date = m.group(1), m.group(2)
+    code, date = m.group(1), m.group(2).ljust(8, "0")
     if code not in tiles or date > tiles[code][1]:
         tiles[code] = (u, date)
 
@@ -100,15 +100,6 @@ for code, (url, date) in sorted(tiles.items()):
         bbox = None
     result.append({"code": code, "date": date, "url": url, "bbox": bbox})
     print(code, date, bbox, flush=True)
-
-# whole-country mosaics (Cloud Optimized GeoTIFF, one per UTM zone)
-for u in sorted(tifs):
-    if re.search(r"/KM50_R_CRS\d+_.*_COG_\d{8}\.tif$", u):
-        info = subprocess.run(["gdalinfo", "/vsicurl/" + u], capture_output=True, text=True,
-                              env={**os.environ, "GDAL_HTTP_USERAGENT": UA})
-        save("cog-" + u.rsplit("/", 1)[1] + ".txt", info.stdout + info.stderr)
-        head = subprocess.run(["curl", "-sSI", "-A", UA, u], capture_output=True, text=True)
-        save("cog-" + u.rsplit("/", 1)[1] + ".headers.txt", head.stdout)
 
 with open(os.path.join(OUT, "bev-km50-tiles.json"), "w") as f:
     json.dump(result, f, indent=1)

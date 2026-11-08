@@ -124,6 +124,11 @@ def gtiff_options() -> list[str]:
 
 def main():
     region_id, work, out = sys.argv[1], sys.argv[2], sys.argv[3]
+    os.environ.update({
+        "GDAL_HTTP_USERAGENT": UA, "GDAL_HTTP_MAX_RETRY": "8", "GDAL_HTTP_RETRY_DELAY": "10",
+        "GDAL_DISABLE_READDIR_ON_OPEN": "EMPTY_DIR", "GDAL_CACHEMAX": "2048", "VSI_CACHE": "TRUE",
+        "CPL_VSIL_CURL_CHUNK_SIZE": "4194304", "GDAL_HTTP_MULTIPLEX": "YES",
+    })
     with open(os.path.join(ROOT, "regions.json")) as f:
         cfg = json.load(f)
     region = next(r for r in cfg["regions"] if r["id"] == region_id)
@@ -162,13 +167,22 @@ def main():
             continue
         log(f"[{i}/{len(sheets)}] {s['code']} {s['date']}")
         src = os.path.join(work, "src.tif")
-        fetch(s["url"], src)
+        if s.get("cog"):
+            # Cloud Optimized GeoTIFF: read only the needed parts over HTTP
+            src = "/vsicurl/" + s["url"]
+        else:
+            fetch(s["url"], src)
         info = json.loads(subprocess.run(["gdalinfo", "-json", src], capture_output=True, text=True, check=True).stdout)
         inp = src
         if len(info["bands"]) == 1 and info["bands"][0].get("colorTable"):
             inp = os.path.join(work, "src.vrt")
             run("gdal_translate", "-q", "-of", "VRT", "-expand", "rgb", src, inp)
+        # only the part of this sheet that lies inside the region's box
+        clip = box(*s["bbox"]).intersection(box(*poly.bounds)).bounds
+        x0, y0 = to_merc(clip[0], clip[1])
+        x1, y1 = to_merc(clip[2], clip[3])
         run("gdalwarp", "-q", "-overwrite", "-t_srs", "EPSG:3857", "-tr", repr(res), repr(res), "-tap",
+            "-te", repr(x0), repr(y0), repr(x1), repr(y1),
             "-r", "average", "-cutline", cut, "-dstalpha", "-multi", "-wo", "NUM_THREADS=ALL_CPUS",
             "-wm", "1024", *co, inp, part)
         for p in (src, os.path.join(work, "src.vrt")):
