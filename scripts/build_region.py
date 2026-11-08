@@ -195,7 +195,7 @@ def main():
     vrt = os.path.join(work, "mosaic.tif")
     if os.path.exists(vrt):
         os.remove(vrt)
-    run("gdalwarp", "-q", "-r", "near", "-dstalpha", "-multi", "-wo", "NUM_THREADS=ALL_CPUS", "-wm", "1024", *co,
+    run("gdalwarp", "-q", "-r", "near", "-multi", "-wo", "NUM_THREADS=ALL_CPUS", "-wm", "1024", *co,
         *sorted(os.path.join(parts, p) for p in os.listdir(parts) if p.endswith(".tif")), vrt)
     shutil.rmtree(parts)
     mbt = os.path.join(work, f"{region_id}.mbtiles")
