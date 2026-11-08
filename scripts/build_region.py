@@ -31,6 +31,9 @@ NE_URLS = [
 TOP25_FEED = "https://service.pdok.nl/kadaster/brt-topraster/atom/top25raster.xml"
 EARTH = 6378137.0
 COUNTRY_A3 = {"NL": "NLD", "AT": "AUT"}
+# GitHub release assets must stay below 2 GiB; keep some margin
+MAX_FILE_BYTES = 1_950_000_000
+QUALITIES = (80, 70, 60)
 
 
 def log(*a):
@@ -198,30 +201,40 @@ def main():
     run("gdalwarp", "-q", "-r", "near", "-multi", "-wo", "NUM_THREADS=ALL_CPUS", "-wm", "1024", *co,
         *sorted(os.path.join(parts, p) for p in os.listdir(parts) if p.endswith(".tif")), vrt)
     shutil.rmtree(parts)
-    mbt = os.path.join(work, f"{region_id}.mbtiles")
-    if os.path.exists(mbt):
-        os.remove(mbt)
-    run("gdal_translate", "-q", "-of", "MBTILES", "-co", "TILE_FORMAT=WEBP", "-co", "QUALITY=80",
-        "-co", "ZOOM_LEVEL_STRATEGY=AUTO", "-co", f"NAME={region['name']}",
-        "-co", f"DESCRIPTION={source['label']}", "-co", "TYPE=baselayer", vrt, mbt)
-    factors = [str(2 ** k) for k in range(1, maxzoom - minzoom + 1)]
-    run("gdaladdo", "-q", "-r", "average", mbt, *factors)
-    os.remove(vrt)
-
-    import sqlite3
-    db = sqlite3.connect(mbt)
-    db.execute("DELETE FROM metadata WHERE name IN ('attribution', 'bounds')")
+    # GitHub release files may be at most 2 GiB: if a region comes out larger,
+    # encode the tiles again with a little more compression.
     w, s_, e, n = poly.bounds
-    db.execute("INSERT INTO metadata (name, value) VALUES ('attribution', ?), ('bounds', ?)",
-               (source["attribution"], f"{w:.5f},{s_:.5f},{e:.5f},{n:.5f}"))
-    zooms = db.execute("SELECT min(zoom_level), max(zoom_level), count(*) FROM tiles").fetchone()
-    db.commit()
-    db.close()
-    log(f"tiles: zoom {zooms[0]}-{zooms[1]}, {zooms[2]} tiles")
-
     pm = os.path.join(out, f"{region_id}.pmtiles")
-    run("pmtiles", "convert", mbt, pm)
-    os.remove(mbt)
+    mbt = os.path.join(work, f"{region_id}.mbtiles")
+    for quality in QUALITIES:
+        for p in (mbt, pm):
+            if os.path.exists(p):
+                os.remove(p)
+        run("gdal_translate", "-q", "-of", "MBTILES", "-co", "TILE_FORMAT=WEBP", "-co", f"QUALITY={quality}",
+            "-co", "ZOOM_LEVEL_STRATEGY=AUTO", "-co", f"NAME={region['name']}",
+            "-co", f"DESCRIPTION={source['label']}", "-co", "TYPE=baselayer", vrt, mbt)
+        factors = [str(2 ** k) for k in range(1, maxzoom - minzoom + 1)]
+        run("gdaladdo", "-q", "-r", "average", mbt, *factors)
+
+        import sqlite3
+        db = sqlite3.connect(mbt)
+        db.execute("DELETE FROM metadata WHERE name IN ('attribution', 'bounds')")
+        db.execute("INSERT INTO metadata (name, value) VALUES ('attribution', ?), ('bounds', ?)",
+                   (source["attribution"], f"{w:.5f},{s_:.5f},{e:.5f},{n:.5f}"))
+        zooms = db.execute("SELECT min(zoom_level), max(zoom_level), count(*) FROM tiles").fetchone()
+        db.commit()
+        db.close()
+        log(f"tiles: zoom {zooms[0]}-{zooms[1]}, {zooms[2]} tiles, WebP quality {quality}")
+
+        run("pmtiles", "convert", mbt, pm)
+        os.remove(mbt)
+        size = os.path.getsize(pm)
+        log(f"file size {size / 1e6:.0f} MB")
+        if size <= MAX_FILE_BYTES:
+            break
+    else:
+        raise SystemExit(f"{region_id} stays larger than {MAX_FILE_BYTES} bytes")
+    os.remove(vrt)
 
     md5 = hashlib.md5()
     with open(pm, "rb") as f:
