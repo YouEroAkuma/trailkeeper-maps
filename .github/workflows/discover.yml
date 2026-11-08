@@ -1,0 +1,49 @@
+name: Discover map sources
+
+# Manual: lists the Austrian BEV KM50-R tiles. The raw results go to the
+# "discovery" branch so the tile list can be checked before it is used.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  discover:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          persist-credentials: false
+      - name: Install GDAL
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq gdal-bin poppler-utils > /dev/null
+      - name: Discover BEV tiles
+        run: python3 -I scripts/discover_bev.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: discovery
+          path: out
+          retention-days: 1
+
+  publish:
+    needs: discover
+    if: always()
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: discovery
+          path: results
+      - name: Push to the discovery branch
+        env:
+          TOKEN: ${{ github.token }}
+        run: |
+          cd results
+          git init -q && git checkout -q -b discovery
+          git -c user.name=discovery -c user.email=actions@github.com add -A
+          git -c user.name=discovery -c user.email=actions@github.com commit -qm "Discovery ${{ github.run_number }}"
+          git push -qf "https://x-access-token:${TOKEN}@github.com/${{ github.repository }}" discovery
