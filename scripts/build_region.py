@@ -34,7 +34,7 @@ COUNTRY_A3 = {"NL": "NLD", "AT": "AUT"}
 
 
 def log(*a):
-    print(*a, flush=True)
+    print(dt.datetime.now(dt.timezone.utc).strftime("%H:%M:%S"), *a, flush=True)
 
 
 def run(*cmd: str):
